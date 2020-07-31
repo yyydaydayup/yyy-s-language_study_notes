@@ -15,4 +15,6 @@
 * 003-用户和组管理
 * 004-Vi和Vim编辑器
 * 006-Shell编程
-
+### Python
+* 00-Python-环境搭建
+  * Python虚拟环境配置
