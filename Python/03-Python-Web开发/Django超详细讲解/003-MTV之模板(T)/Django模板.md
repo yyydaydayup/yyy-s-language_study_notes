@@ -672,7 +672,7 @@ return value + word
 
 具体要求如下：
 
-​	time距离现在的时间间隔：
+time距离现在的时间间隔：
 1. 如果时间间隔小于1分钟以内，那么就显示“刚刚”
 2. 如果是大于1分钟小于1小时，那么就显示“xx分钟前”
 3. 如果是大于1小时小于24小时，那么就显示“xx小时前”
@@ -683,7 +683,7 @@ return value + word
 
 示例代码如下：
 
-​```python
+```python
 # =========time_filter.py===========
 from datetime import datetime
 from django import template
@@ -736,9 +736,9 @@ def mycut(value,mystr):
 
 1. 有些模版代码是重复的。因此可以单独抽取出来，以后哪里需要用到，就直接使用`include`进来就可以了。
 2. 如果想要在`include`子模版的时候，传递一些参数，那么可以使用`with xxx=xxx`的形式。示例代码如下：
-    ```python
-    {% include 'header.html' with username='zhiliao' %}
-    ```
+```python
+{% include 'header.html' with username='zhiliao' %}
+```
 
 ### 5.2 模版继承：extends标签
 
