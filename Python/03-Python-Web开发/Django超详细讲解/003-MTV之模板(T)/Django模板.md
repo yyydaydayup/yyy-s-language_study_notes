@@ -643,24 +643,24 @@ context = {
 
 4. 在写完过滤器（函数）后，要使用`django.template.Library().filter(self, name=None, filter_func=None):`进行注册。或者使用装饰器。
 
-    ```python
-    # ===========my_filter.py============
-    # ====方法一====
-    from django import template
-    register = template.Library()
-    # 过滤器最多有两个参数，且第一个永远是被过滤的那个值
-    def greet(value, word):
-        return value + word
-    register.filter("greet", greet)
-    # ===方法二：使用装饰器===
-    from django import template
-    register = template.Library()
-    @register.filter()  # 可以指定过滤器名称参数，如果不指定，将使用函数名作为过滤器的名字
-    def greet(value, word):
-        return value + word
-    ```
+```python
+# ===========my_filter.py============
+# ====方法一====
+from django import template
+register = template.Library()
+# 过滤器最多有两个参数，且第一个永远是被过滤的那个值
+def greet(value, word):
+return value + word
+register.filter("greet", greet)
+# ===方法二：使用装饰器===
+from django import template
+register = template.Library()
+@register.filter()  # 可以指定过滤器名称参数，如果不指定，将使用函数名作为过滤器的名字
+def greet(value, word):
+return value + word
 ```
-    
+
+
 5. 还要把这个过滤器所在的这个app添加到`settings.INSTALLED_APS`中，不然Django也找不到这个过滤器。
 
 6. 在模板中使用 `load` 标签加载过滤器所在的python文件名。如：`{% load my_filter %}` 。
