@@ -70,7 +70,7 @@ virtualenv -p C:\Python36\python.exe [virutalenv name]
 
 ------
 
-###3.2 ` virtualenvwrapper`
+### 3.2 ` virtualenvwrapper`
 
 `virtualenv`的不足：
 
